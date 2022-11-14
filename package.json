@@ -1,17 +1,19 @@
 {
-  "name": "code",
+  "name": "openclassrooms_p3",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the folder for my 3rd project of OpenClassrooms' Web development path.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./main.scss:./css/style.css"
+    "sass": "sass --watch ./main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KBerliner/OCP3.git"
   },
-  "author": "",
+  "author": "Kyle Berliner",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/KBerliner/OCP3/issues"
   },
