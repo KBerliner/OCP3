@@ -1,9 +1,119 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
-body {
-  background-color: green;
+html, body {
+  margin: 0;
+  padding: 0;
 }
-body:hover {
-  background-color: red;
+
+body {
+  height: 2000px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0 0.1em 0.1em rgba(150, 150, 150, 0.5019607843);
+  background-color: white;
+  z-index: 10;
+}
+.header__text {
+  font-family: "Shrikhand", cursive;
+  margin: 0.3em 0;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  background-color: #e4e4e4;
+}
+.location__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location__dot::before {
+  width: 1em;
+}
+.location__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.85em;
+  padding: 0.5em 2em;
+}
+
+.explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 2em 0;
+}
+.explore__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+}
+.explore__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 80%;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.explore__button {
+  margin: 0.75em 0;
+  padding: 1.1em 2em;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  border-radius: 2em;
+  border: none;
+  box-shadow: 0 0.4em 0.9em rgba(150, 150, 150, 0.7176470588);
+  color: white;
+}
+.explore__button--gradient {
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+
+.howitworks__title {
+  font-family: "Roboto", sans-serif;
+  padding: 1rem;
+  margin: 1em 0;
+}
+.howitworks__card {
+  margin: 1em 1.5em;
+  background-color: #faf7fd;
+  padding: 1.75em;
+  display: flex;
+  align-content: center;
+  border-radius: 1em;
+  box-shadow: 0 0.3em 0.5em rgba(150, 150, 150, 0.2196078431);
+}
+.howitworks__card:hover {
+  background-color: #f4eefc;
+}
+.howitworks__card:hover > .howitworks__icon {
+  color: #9356DC;
+}
+.howitworks__card::before {
+  content: "";
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #9356DC;
+  left: 1em;
+  border-radius: 4em;
+  display: flex;
+  align-items: center;
+}
+.howitworks__icon {
+  display: flex;
+  align-items: center;
+  color: #969696;
+}
+.howitworks__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  margin: 0 1.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

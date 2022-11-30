@@ -1,8 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+@import "./sass/utils/variables";
+@import "./sass/utils/mixins";
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-color: green;
-    &:hover {
-        background-color: red;
+    height: 2000px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 0.1em 0.1em #96969680;
+    background-color: white;
+    z-index: 10;
+    &__text {
+        @include title-font;
+        margin: 0.3em 0;
+    }
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    background-color: #e4e4e4;
+    &__dot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            width: 1em;
+        }
+    }
+    &__text {
+        @include text-font;
+        font-size: 0.85em;
+        padding: 0.5em 2em;
+    }
+}
+
+.explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 2em 0;
+    &__title {
+        @include text-font;
+        font-size: 1.5em;
+    }
+    &__text {
+        @include text-font;
+        font-weight: 400;
+        width: 80%;
+        text-align: center;
+        letter-spacing: 0.03em;
+    }
+    &__button {
+        margin: 0.75em 0;
+        padding: 1.1em 2em;
+        @include text-font;
+        font-size: 1em;
+        // font-weight: 500;
+        border-radius: 2em;
+        border: none;
+        box-shadow: 0 0.4em 0.9em #969696b7;
+        color: white;
+        &--gradient {
+            background-image: linear-gradient(to bottom right, $clr-secondary, $clr-primary);
+        }
+    }
+}
+
+.howitworks {
+    &__title {
+        @include text-font;
+        padding: 1rem;
+        margin: 1em 0;
+    }
+    &__card {
+        margin: 1em 1.5em;
+        background-color: $clr-primary-light;
+        padding: 1.75em;
+        display: flex;
+        align-content: center;
+        border-radius: 1em;
+        box-shadow: 0 0.3em 0.5em #96969638;
+        &:hover {
+            background-color: darken($clr-primary-light, 2%);
+        }
+        &:hover > .howitworks__icon {
+            color: $clr-primary;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: $clr-primary;
+            left: 1em;
+            border-radius: 4em;
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        color: #969696;
+    }
+    &__text {
+        @include text-font;
+        font-weight: 600;
+        margin: 0 1.5em;
     }
 }
