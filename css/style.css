@@ -94,8 +94,7 @@ body {
 .howitworks__card:hover > .howitworks__icon {
   color: #9356DC;
 }
-.howitworks__card::before {
-  content: "";
+.howitworks__step--1 {
   position: absolute;
   width: 1.2rem;
   height: 1.2rem;
@@ -104,6 +103,38 @@ body {
   border-radius: 4em;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+.howitworks__step--2 {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #9356DC;
+  left: 1em;
+  border-radius: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+.howitworks__step--3 {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #9356DC;
+  left: 1em;
+  border-radius: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
 }
 .howitworks__icon {
   display: flex;

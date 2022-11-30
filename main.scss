@@ -99,16 +99,23 @@ body {
         &:hover > .howitworks__icon {
             color: $clr-primary;
         }
-        &::before {
-            content: "";
-            position: absolute;
-            width: 1.2rem;
-            height: 1.2rem;
-            background-color: $clr-primary;
-            left: 1em;
-            border-radius: 4em;
-            display: flex;
-            align-items: center;
+    }
+    &__step {
+        @for $i from 1 through 3 {
+            &--#{$i} {
+                position: absolute;
+                width: 1.2rem;
+                height: 1.2rem;
+                background-color: $clr-primary;
+                left: 1em;
+                border-radius: 4em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                @include text-font;
+                font-size: 12px;
+            }
         }
     }
     &__icon {
