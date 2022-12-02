@@ -18,7 +18,7 @@ body {
     position: absolute;
     width: 100%;
     z-index: 2;
-    animation: loaded 10ms 1900ms both;
+    animation: loaded 10ms 0ms both;
     &__bar {
         width: 30%;
         height: 0.5%;
@@ -48,7 +48,7 @@ body {
     top: 0px;
     box-shadow: 0 0.1em 0.1em #96969680;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
     &__text {
         @include title-font;
         margin: 0.3em 0;
@@ -96,7 +96,7 @@ body {
         padding: 1.1em 2em;
         @include text-font;
         font-size: 1em;
-        // font-weight: 500;
+        font-weight: 500;
         border-radius: 2em;
         border: none;
         box-shadow: 0 0.4em 0.9em #969696b7;
@@ -158,6 +158,108 @@ body {
     }
 }
 
+.restaurants {
+    background-color: #f1f1f1;
+    &__title {
+        @include text-font;
+        margin: 0;
+        padding: 2em 0 0.5em 1em;
+        font-weight: 900;
+    }
+}
+
+.restcards {
+    margin: 0;
+    padding: 1em;
+    &__card {
+        border-radius: 1em;
+        margin-bottom: 1.2em;
+        box-shadow: 0 0.2em 0.5em #96969638;
+        width: 100%;
+        height: 16em;
+        @include text-font;
+        &--img {
+            width: 100%;
+            object-fit: cover;
+            height: 70%;
+            border-top-left-radius: 1em;
+            border-top-right-radius: 1em;            
+        }
+        &--text {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            margin: 0;
+        }
+        &--title {
+            padding: 0.5em 1rem 0.2em 1rem;
+            margin: 0;
+            font-weight: 700;
+            display: inline-block;
+        }
+        &--location {
+            padding: 0em 1rem;
+            margin: 0;
+            display: inline-block;
+        }
+        &--heart {
+            position: absolute;
+            left: 85%;
+            bottom: 12%;
+            &--empty {
+                position: relative;
+                &:hover {
+                    display: none;
+                }
+                // &:hover + .restcards__heart--full::before{
+                //     display: inline;
+                // }
+            }
+            &--full {
+                position: relative;
+                &::before {
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    background-image: linear-gradient(to bottom, $clr-primary, $clr-secondary);
+                    color: transparent;
+                    // display: none;
+                }
+                &:hover {
+                    display: inline;
+                }
+                &:hover + .restcards__heart--empty::before{
+                    display: none;
+                }
+            }
+        }
+        // &--1 {
+            
+            
+        // }
+        // &--2 {
+
+        // }
+        // &--3 {
+
+        // }
+        // &--4 {
+
+        // }
+        &--new {
+            margin: 1em;
+            position: absolute;
+            z-index: 1;
+            right: 1em;
+            background-color: $clr-tertiary;
+            text-align: center;
+            color: $clr-tertiary-dark;
+            letter-spacing: 1%;
+            padding: 0.5em 2em;
+            border-radius: 0.1em;
+        }
+    }
+}
+
 @keyframes loaded {
     0% {
         transform: translateX(0);
@@ -195,5 +297,14 @@ body {
         transform: scaleX(20%);
         transform: scaleY(400%);
         opacity: 100%;
+    }
+}
+
+@keyframes gradualfill {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
     }
 }

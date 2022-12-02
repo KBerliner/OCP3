@@ -14,7 +14,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: 2;
-  animation: loaded 10ms 1900ms both;
+  animation: loaded 10ms 0ms both;
 }
 .homeloader__bar {
   width: 30%;
@@ -42,7 +42,7 @@ body {
   top: 0px;
   box-shadow: 0 0.1em 0.1em rgba(150, 150, 150, 0.5019607843);
   background-color: white;
-  z-index: 1;
+  z-index: 2;
 }
 .header__text {
   font-family: "Shrikhand", cursive;
@@ -91,6 +91,7 @@ body {
   padding: 1.1em 2em;
   font-family: "Roboto", sans-serif;
   font-size: 1em;
+  font-weight: 500;
   border-radius: 2em;
   border: none;
   box-shadow: 0 0.4em 0.9em rgba(150, 150, 150, 0.7176470588);
@@ -173,6 +174,91 @@ body {
   margin: 0 1.5em;
 }
 
+.restaurants {
+  background-color: #f1f1f1;
+}
+.restaurants__title {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 2em 0 0.5em 1em;
+  font-weight: 900;
+}
+
+.restcards {
+  margin: 0;
+  padding: 1em;
+}
+.restcards__card {
+  border-radius: 1em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 0.2em 0.5em rgba(150, 150, 150, 0.2196078431);
+  width: 100%;
+  height: 16em;
+  font-family: "Roboto", sans-serif;
+}
+.restcards__card--img {
+  width: 100%;
+  object-fit: cover;
+  height: 70%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.restcards__card--text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0;
+}
+.restcards__card--title {
+  padding: 0.5em 1rem 0.2em 1rem;
+  margin: 0;
+  font-weight: 700;
+  display: inline-block;
+}
+.restcards__card--location {
+  padding: 0em 1rem;
+  margin: 0;
+  display: inline-block;
+}
+.restcards__card--heart {
+  position: absolute;
+  left: 85%;
+  bottom: 12%;
+}
+.restcards__card--heart--empty {
+  position: relative;
+}
+.restcards__card--heart--empty:hover {
+  display: none;
+}
+.restcards__card--heart--full {
+  position: relative;
+}
+.restcards__card--heart--full::before {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
+  color: transparent;
+}
+.restcards__card--heart--full:hover {
+  display: inline;
+}
+.restcards__card--heart--full:hover + .restcards__heart--empty::before {
+  display: none;
+}
+.restcards__card--new {
+  margin: 1em;
+  position: absolute;
+  z-index: 1;
+  right: 1em;
+  background-color: #99E2D0;
+  text-align: center;
+  color: #2a947a;
+  letter-spacing: 1%;
+  padding: 0.5em 2em;
+  border-radius: 0.1em;
+}
+
 @keyframes loaded {
   0% {
     transform: translateX(0);
@@ -206,6 +292,14 @@ body {
     transform: scaleX(20%);
     transform: scaleY(400%);
     opacity: 100%;
+  }
+}
+@keyframes gradualfill {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
 
