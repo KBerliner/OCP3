@@ -8,6 +8,32 @@ body {
   height: 2000px;
 }
 
+.homeloader {
+  height: inherit;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  animation: loaded 10ms 1900ms both;
+}
+.homeloader__bar {
+  width: 30%;
+  height: 0.5%;
+  background-color: #9356DC;
+  position: absolute;
+  left: 35%;
+  animation: homeload 500ms linear 4 both alternate;
+}
+.homeloader__bar--1 {
+  top: 10%;
+}
+.homeloader__bar--2 {
+  top: 15%;
+}
+.homeloader__bar--3 {
+  top: 20%;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -16,7 +42,7 @@ body {
   top: 0px;
   box-shadow: 0 0.1em 0.1em rgba(150, 150, 150, 0.5019607843);
   background-color: white;
-  z-index: 10;
+  z-index: 1;
 }
 .header__text {
   font-family: "Shrikhand", cursive;
@@ -145,6 +171,42 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   margin: 0 1.5em;
+}
+
+@keyframes loaded {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(9999px);
+  }
+}
+@keyframes homeload {
+  0% {
+    transform: scaleX(100%);
+    transform: scaleY(100%);
+    opacity: 80%;
+  }
+  25% {
+    transform: scaleX(80%);
+    transform: scaleY(200%);
+    opacity: 85%;
+  }
+  50% {
+    transform: scaleX(60%);
+    transform: scaleY(250%);
+    opacity: 90%;
+  }
+  75% {
+    transform: scaleX(40%);
+    transform: scaleY(300%);
+    opacity: 95%;
+  }
+  100% {
+    transform: scaleX(20%);
+    transform: scaleY(400%);
+    opacity: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
