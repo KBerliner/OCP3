@@ -252,6 +252,25 @@ html, body {
     }
 }
 
+.footer {
+    color: white;
+    background-color: #3f3f3f;
+    margin: 0;
+    padding: 1em;
+    &__label {
+        @include title-font;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+    &__context {
+        @include text-font;
+    }
+    &__contact {
+        text-decoration: none;
+        color: white;
+    }
+}
+
 @keyframes favorite {
     0% {
         transform: scaleY(0);

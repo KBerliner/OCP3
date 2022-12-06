@@ -266,6 +266,25 @@ html, body {
   border-radius: 0.1em;
 }
 
+.footer {
+  color: white;
+  background-color: #3f3f3f;
+  margin: 0;
+  padding: 1em;
+}
+.footer__label {
+  font-family: "Shrikhand", cursive;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.footer__context {
+  font-family: "Roboto", sans-serif;
+}
+.footer__contact {
+  text-decoration: none;
+  color: white;
+}
+
 @keyframes favorite {
   0% {
     transform: scaleY(0);
