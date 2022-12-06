@@ -234,7 +234,7 @@ html, body {
 }
 .restcards__card__heart--empty {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
 }
 .restcards__card__heart--empty:hover {
   opacity: 0;
@@ -244,7 +244,7 @@ html, body {
 }
 .restcards__card__heart--full {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   transform: scaleY(0);
 }
 .restcards__card__heart--full::before {
