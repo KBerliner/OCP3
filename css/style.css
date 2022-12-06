@@ -186,7 +186,7 @@ html, body {
 
 .restcards {
   margin: 0;
-  padding: 1em;
+  padding: 1em 1em 2.5em 1em;
 }
 .restcards__card {
   border-radius: 1em;
@@ -268,14 +268,16 @@ html, body {
 
 .footer {
   color: white;
-  background-color: #3f3f3f;
+  background-color: #383838;
   margin: 0;
   padding: 1em;
+  line-height: 0.5em;
 }
 .footer__label {
   font-family: "Shrikhand", cursive;
   letter-spacing: 1px;
   font-weight: 400;
+  padding-bottom: 0.75em;
 }
 .footer__context {
   font-family: "Roboto", sans-serif;
