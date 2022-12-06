@@ -4,10 +4,6 @@ html, body {
   padding: 0;
 }
 
-body {
-  height: 2000px;
-}
-
 .homeloader {
   height: inherit;
   background-color: white;
@@ -184,6 +180,10 @@ body {
   font-weight: 900;
 }
 
+.rest__link {
+  text-decoration: none;
+}
+
 .restcards {
   margin: 0;
   padding: 1em;
@@ -195,56 +195,63 @@ body {
   width: 100%;
   height: 16em;
   font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: black;
 }
-.restcards__card--img {
+.restcards__card__img {
   width: 100%;
   object-fit: cover;
   height: 70%;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
 }
-.restcards__card--text {
+.restcards__card__context {
+  display: flex;
+  justify-content: space-between;
+}
+.restcards__card__text {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: 0;
 }
-.restcards__card--title {
+.restcards__card__title {
   padding: 0.5em 1rem 0.2em 1rem;
   margin: 0;
   font-weight: 700;
   display: inline-block;
 }
-.restcards__card--location {
+.restcards__card__location {
   padding: 0em 1rem;
   margin: 0;
   display: inline-block;
 }
-.restcards__card--heart {
+.restcards__card__hearts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 2em;
+}
+.restcards__card__heart--empty {
   position: absolute;
-  left: 85%;
-  bottom: 12%;
+  z-index: 2;
 }
-.restcards__card--heart--empty {
-  position: relative;
+.restcards__card__heart--empty:hover {
+  opacity: 0;
 }
-.restcards__card--heart--empty:hover {
-  display: none;
+.restcards__card__heart--empty:hover + .restcards__card__heart--full {
+  animation: favorite 200ms forwards;
 }
-.restcards__card--heart--full {
-  position: relative;
+.restcards__card__heart--full {
+  position: absolute;
+  z-index: 1;
+  transform: scaleY(0);
 }
-.restcards__card--heart--full::before {
+.restcards__card__heart--full::before {
   background-clip: text;
   -webkit-background-clip: text;
   background-image: linear-gradient(to bottom, #9356DC, #FF79DA);
   color: transparent;
-}
-.restcards__card--heart--full:hover {
-  display: inline;
-}
-.restcards__card--heart--full:hover + .restcards__heart--empty::before {
-  display: none;
 }
 .restcards__card--new {
   margin: 1em;
@@ -259,6 +266,14 @@ body {
   border-radius: 0.1em;
 }
 
+@keyframes favorite {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 @keyframes loaded {
   0% {
     transform: translateX(0);

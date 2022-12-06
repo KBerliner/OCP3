@@ -8,10 +8,6 @@ html, body {
     padding: 0;
 }
 
-body {
-    height: 2000px;
-}
-
 .homeloader {
     height: inherit;
     background-color: white;
@@ -168,6 +164,10 @@ body {
     }
 }
 
+.rest__link {
+    text-decoration: none;
+}
+
 .restcards {
     margin: 0;
     padding: 1em;
@@ -178,73 +178,65 @@ body {
         width: 100%;
         height: 16em;
         @include text-font;
-        &--img {
+        text-decoration: none;
+        color: black;
+        &__img {
             width: 100%;
             object-fit: cover;
             height: 70%;
             border-top-left-radius: 1em;
             border-top-right-radius: 1em;            
         }
-        &--text {
+        &__context {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__text {
             display: flex;
             flex-direction: column;
             width: 70%;
             margin: 0;
         }
-        &--title {
+        &__title {
             padding: 0.5em 1rem 0.2em 1rem;
             margin: 0;
             font-weight: 700;
             display: inline-block;
         }
-        &--location {
+        &__location {
             padding: 0em 1rem;
             margin: 0;
             display: inline-block;
         }
-        &--heart {
-            position: absolute;
-            left: 85%;
-            bottom: 12%;
+        &__hearts {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1em 2em;
+        }
+        &__heart {
             &--empty {
-                position: relative;
+                position: absolute;
+                z-index: 2;
                 &:hover {
-                    display: none;
+                    opacity: 0;
                 }
-                // &:hover + .restcards__heart--full::before{
-                //     display: inline;
-                // }
+                &:hover + .restcards__card__heart--full {
+                    animation: favorite 200ms forwards;
+                }
             }
             &--full {
-                position: relative;
+                position: absolute;
+                z-index: 1;
+                transform: scaleY(0);
                 &::before {
                     background-clip: text;
                     -webkit-background-clip: text;
                     background-image: linear-gradient(to bottom, $clr-primary, $clr-secondary);
                     color: transparent;
-                    // display: none;
-                }
-                &:hover {
-                    display: inline;
-                }
-                &:hover + .restcards__heart--empty::before{
-                    display: none;
                 }
             }
         }
-        // &--1 {
-            
-            
-        // }
-        // &--2 {
-
-        // }
-        // &--3 {
-
-        // }
-        // &--4 {
-
-        // }
         &--new {
             margin: 1em;
             position: absolute;
@@ -257,6 +249,15 @@ body {
             padding: 0.5em 2em;
             border-radius: 0.1em;
         }
+    }
+}
+
+@keyframes favorite {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
     }
 }
 
