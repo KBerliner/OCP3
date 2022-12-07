@@ -28,5 +28,8 @@
         &--gradient {
             background-image: linear-gradient(to bottom right, $clr-secondary, $clr-primary);
         }
+        &:hover {
+            animation: btnhover 100ms both;
+        }
     }
 }
