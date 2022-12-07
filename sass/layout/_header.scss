@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0 0.1em 0.1em #96969680;
+    background-color: white;
+    z-index: 2;
+    &__text {
+        @include title-font;
+        margin: 0.3em 0;
+        color: black;
+    }
+    &__arrow::before {
+        color: black;
+        position: absolute;
+        left: 1em;
+        top: 50%;
+        transform: translate(0, 50%);
+        z-index: 2;
+    }
+    &__link {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,18 @@
+.location {
+    display: flex;
+    justify-content: center;
+    background-color: #e4e4e4;
+    &__dot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::before {
+            width: 1em;
+        }
+    }
+    &__text {
+        @include text-font;
+        font-size: 0.85em;
+        padding: 0.5em 2em;
+    }
+}

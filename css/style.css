@@ -1,35 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-.homeloader {
-  height: inherit;
-  background-color: white;
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  animation: loaded 10ms 0ms both;
-}
-.homeloader__bar {
-  width: 30%;
-  height: 0.5%;
-  background-color: #9356DC;
-  position: absolute;
-  left: 35%;
-  animation: homeload 500ms linear 4 both alternate;
-}
-.homeloader__bar--1 {
-  top: 10%;
-}
-.homeloader__bar--2 {
-  top: 15%;
-}
-.homeloader__bar--3 {
-  top: 20%;
-}
-
 .header {
   display: flex;
   justify-content: center;
@@ -43,6 +12,20 @@ html, body {
 .header__text {
   font-family: "Shrikhand", cursive;
   margin: 0.3em 0;
+  color: black;
+}
+.header__arrow::before {
+  color: black;
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translate(0, 50%);
+  z-index: 2;
+}
+.header__link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
 .location {
@@ -170,6 +153,37 @@ html, body {
   margin: 0 1.5em;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.homeloader {
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  animation: loaded 10ms 1900ms both;
+}
+.homeloader__bar {
+  width: 30%;
+  height: 0.5%;
+  background-color: #9356DC;
+  position: absolute;
+  left: 35%;
+  animation: homeload 500ms linear 4 both alternate;
+}
+.homeloader__bar--1 {
+  top: 10%;
+}
+.homeloader__bar--2 {
+  top: 15%;
+}
+.homeloader__bar--3 {
+  top: 20%;
+}
+
 .restaurants {
   background-color: #f1f1f1;
 }
@@ -287,6 +301,11 @@ html, body {
   color: white;
 }
 
+.rest__img {
+  width: 100%;
+  object-fit: cover;
+}
+
 @keyframes favorite {
   0% {
     transform: scaleY(0);
@@ -297,10 +316,10 @@ html, body {
 }
 @keyframes loaded {
   0% {
-    transform: translateX(0);
+    z-index: 3;
   }
   100% {
-    transform: translateX(9999px);
+    z-index: -2;
   }
 }
 @keyframes homeload {
