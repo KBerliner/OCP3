@@ -161,10 +161,11 @@ html, body {
 
 .rest {
     background-color: #f1f1f1;
-    padding-bottom: 1.5em;
+    padding-bottom: 3em;
     &__img {
     width: 100%;
     object-fit: cover;
+    height: 15em;
     }
     &__menu {
         background-color: #f1f1f1;
@@ -185,7 +186,7 @@ html, body {
         // border: 2px solid red;
         // position: relative;
         // bottom: 2em;
-        z-index: 2;
+        z-index: 1;
         background-color: #f1f1f1;
         position: relative;
         bottom: 2em;
@@ -248,63 +249,156 @@ html, body {
         }
     }
     &__card {
-        background-color:white;
-        padding: 0 0.5em;
-        line-height: 0.5em;
-        // border: 2px solid red;
-        @include text-font;
-        height: 4.5em;
-        border-radius: 1em;
-        @include shadow;
         margin: 1em 0;
+        background-color: white;
+        border-radius: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         cursor: pointer;
-        &:hover .menu__card__check {
-            animation: menuitem 750ms both alternate;
+        @include shadow;
+        &--normal {
+            height: 5em;
         }
-        &:hover .menu__card__checkmark {
-            animation: checkmark 500ms both alternate;
-            // border: 2px solid red;
+        &--tall {
+            height: 6em;
         }
-        &:hover .menu__card__desc__price {
-            animation: pricemove 750ms forwards;
+        &__context {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 0 0.5em;
+            @include text-font;
+            height: 65%;
         }
         &__title {
-            padding: 1em 0 0.75em 0.1em;
             margin: 0;
-            font-size: 1.2em;
+            padding-bottom: 0.25em;
         }
         &__desc {
-            display: flex;
-            justify-content: space-between;
-            // padding: 0.2em 0.5em 1em 0.1em;
             margin: 0;
-            &__text {
-                margin: 0;
-                font-weight: 400;
-            }
-            &__price {
-                margin: 0;
-                font-weight: 800;
-            }
+            font-weight: 300;
+            font-size: 0.85em;
+        }
+        &__pricecheck {
+            display: flex;
+            align-self: flex-end;
+            height: 100%;
+        }
+        &__price {
+            margin: 0;
+            padding: 1em;
+            font-weight: 800;
+            @include text-font;
+            align-self: flex-end;
+            transform: translateX(3em);
         }
         &__check {
-            position: relative;
-            color: white;
-            background-color: $clr-tertiary;
-            float: right;
-            bottom: 69%;
-            right: -8px;
             transform: scaleX(0);
-            height: 4.5em;
-            width: 4em;
+            background-color: $clr-tertiary;
+            align-self: center;
+            height: 100%;
             display: flex;
-            align-items: center;
             justify-content: center;
             border-top-right-radius: 1em;
             border-bottom-right-radius: 1em;
+            width: 3.5em;
             transform-origin: right;
         }
+        &__checkmark {
+            color: white;
+            align-self: center;
+        }
+        &:hover .menu__card__check {
+            animation: menuitem 750ms both alternate;
+        }
+        &:hover .menu__card__price {
+            animation: pricemove 750ms both alternate;
+        }
+        &:hover .menu__card__checkmark {
+            animation: checkmark 500ms both alternate;
+        }
     }
+//     &__card {
+//         background-color:white;
+//         padding: 0 0.75em 1em 0.5em;
+//         line-height: 0.5em;
+//         // border: 2px solid red;
+//         @include text-font;
+//         height: 4.5em;
+//         max-height: 50em;
+//         border-radius: 1em;
+//         @include shadow;
+//         margin: 1em 0;
+//         cursor: pointer;
+//         &--normal {
+//             height: 4em;
+//         }
+//         &--tall {
+//             height: 76px;
+//         }
+//         &:hover .menu__card__check {
+//             animation: menuitem 750ms both alternate;
+//         }
+//         &:hover .menu__card__checkmark {
+//             animation: checkmark 500ms both alternate;
+//             // border: 2px solid red;
+//         }
+//         &:hover .menu__card__desc__price {
+//             animation: pricemove 750ms forwards;
+//         }
+//         &__title {
+//             padding: 0.75em 0 0.75em 0.1em;
+//             margin: 0 0 -0.5em 0;
+//             font-size: 1.2em;
+//             max-width: 80%;
+//             line-height: 1em;
+//         }
+//         &__desc {
+//             display: flex;
+//             justify-content: space-between;
+//             // padding: 0.2em 0.5em 1em 0.1em;
+//             margin: 0;
+//             width: 100%;
+//             padding: 0.25em 0;
+//             // line-height: 0.8em;
+//             &__text {
+//                 margin: 0;
+//                 font-weight: 400;
+//             }
+//             &__price {
+//                 margin: 0;
+//                 font-weight: 800;
+//             }
+//         }
+//         &__check {
+//             position: relative;
+//             color: white;
+//             background-color: $clr-tertiary;
+//             float: right;
+//             // bottom: 3.5em;
+//             bottom: 85%;
+//             right: -12px;
+//             transform: scaleX(0);
+//             height: 80px;
+//             width: 4em;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             border-top-right-radius: 1em;
+//             border-bottom-right-radius: 1em;
+//             transform-origin: right;
+//             &--tall {
+//                 height: 92px;
+//                 bottom: 74px;
+//             }
+//             &--undertall {
+//                 bottom: 74px;
+//                 margin-bottom: -2em;
+//             }
+//         }
+//     }
+// }
 }
 
 .order {
@@ -329,6 +423,13 @@ html, body {
             animation: btnhover 100ms both alternate;
             box-shadow: 0 0.2em 0.75em #969696;
         }
+    }
+}
+
+.tep {
+    &__header {
+        font-size: 1.85em;
+        width: 75%;
     }
 }
 
@@ -358,10 +459,10 @@ html, body {
 
 @keyframes pricemove {
     0% {
-        transform: translateX(0);
+        transform: translateX(3.5em);
     }
     100% {
-        transform: translateX(-4em);
+        transform: translateX(0);
     }
 }
 
@@ -371,20 +472,20 @@ html, body {
         animation-timing-function: linear;
     }
     25% {
-        transform: rotate(90deg);
+        transform: rotate(-90deg);
         animation-timing-function: linear;
     }
     50% {
-        transform: rotate(180deg);
+        transform: rotate(-180deg);
         animation-timing-function: linear;
     }
     75% {
-        transform: rotate(270deg);
+        transform: rotate(-270deg);
         animation-timing-function: linear;
     }
     100% {
-        transform: rotate(360deg);
-        animation-timing-function: linear;
+        transform: rotate(-360deg);
+        animation-timing-function: ease-out;
     }
 }
 
