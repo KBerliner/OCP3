@@ -4,7 +4,7 @@
     background-color: #e4e4e4;
     &__dot {
         display: flex;
-        align-items: center;
+        margin: auto 0;
         justify-content: center;
         &::before {
             width: 1em;
