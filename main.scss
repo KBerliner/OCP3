@@ -169,10 +169,7 @@ html, body {
     }
     &__menu {
         background-color: #f1f1f1;
-        // line-height: 0.5rem;
         height: 100%;
-        // position: relative;
-        // bottom: 2em;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
     }
@@ -183,9 +180,6 @@ html, body {
         padding: 1.25em 1em 0 1em;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
-        // border: 2px solid red;
-        // position: relative;
-        // bottom: 2em;
         z-index: 1;
         background-color: #f1f1f1;
         position: relative;
@@ -201,7 +195,7 @@ html, body {
         &--empty {
             z-index: 1;
             &:hover {
-                opacity: 0;
+                animation: disappear 200ms both;
             }
             &:hover + .rest__heart--full {
                 animation: favorite 200ms forwards;
@@ -209,8 +203,7 @@ html, body {
         }
         &--full {
             z-index: 0;
-            transform: scaleY(0);
-            transform-origin: bottom;
+            transform: scale(0);
             &::before {
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -242,7 +235,6 @@ html, body {
             background-color: $clr-tertiary;
             width: 2.5em;
             height: 3px;
-            // border: 2px solid red;
             display: inline-block;
             position: absolute;
             top: 1.3em;
@@ -279,10 +271,11 @@ html, body {
         &__desc {
             margin: 0;
             font-weight: 300;
-            font-size: 0.85em;
-            // z-index: 0;
+            font-size: 0.95em;
             text-overflow: ellipsis;
             white-space: nowrap;
+            overflow: hidden;
+            animation: defaultdescwidth 750ms both;
         }
         &__pricecheck {
             display: flex;
@@ -295,10 +288,8 @@ html, body {
             font-weight: 800;
             @include text-font;
             align-self: flex-end;
-            // transform: translateX(3em);
             position: absolute;
             right: 1em;
-            // z-index: 0;
             animation: defaultprice 750ms both alternate;
         }
         &__check {
@@ -327,87 +318,10 @@ html, body {
         &:hover .menu__card__checkmark {
             animation: checkmark 500ms both alternate;
         }
+        &:hover .menu__card__desc {
+            animation: descwidth 750ms both;
+        }
     }
-//     &__card {
-//         background-color:white;
-//         padding: 0 0.75em 1em 0.5em;
-//         line-height: 0.5em;
-//         // border: 2px solid red;
-//         @include text-font;
-//         height: 4.5em;
-//         max-height: 50em;
-//         border-radius: 1em;
-//         @include shadow;
-//         margin: 1em 0;
-//         cursor: pointer;
-//         &--normal {
-//             height: 4em;
-//         }
-//         &--tall {
-//             height: 76px;
-//         }
-//         &:hover .menu__card__check {
-//             animation: menuitem 750ms both alternate;
-//         }
-//         &:hover .menu__card__checkmark {
-//             animation: checkmark 500ms both alternate;
-//             // border: 2px solid red;
-//         }
-//         &:hover .menu__card__desc__price {
-//             animation: pricemove 750ms forwards;
-//         }
-//         &__title {
-//             padding: 0.75em 0 0.75em 0.1em;
-//             margin: 0 0 -0.5em 0;
-//             font-size: 1.2em;
-//             max-width: 80%;
-//             line-height: 1em;
-//         }
-//         &__desc {
-//             display: flex;
-//             justify-content: space-between;
-//             // padding: 0.2em 0.5em 1em 0.1em;
-//             margin: 0;
-//             width: 100%;
-//             padding: 0.25em 0;
-//             // line-height: 0.8em;
-//             &__text {
-//                 margin: 0;
-//                 font-weight: 400;
-//             }
-//             &__price {
-//                 margin: 0;
-//                 font-weight: 800;
-//             }
-//         }
-//         &__check {
-//             position: relative;
-//             color: white;
-//             background-color: $clr-tertiary;
-//             float: right;
-//             // bottom: 3.5em;
-//             bottom: 85%;
-//             right: -12px;
-//             transform: scaleX(0);
-//             height: 80px;
-//             width: 4em;
-//             display: flex;
-//             align-items: center;
-//             justify-content: center;
-//             border-top-right-radius: 1em;
-//             border-bottom-right-radius: 1em;
-//             transform-origin: right;
-//             &--tall {
-//                 height: 92px;
-//                 bottom: 74px;
-//             }
-//             &--undertall {
-//                 bottom: 74px;
-//                 margin-bottom: -2em;
-//             }
-//         }
-//     }
-// }
 }
 
 .order {
@@ -439,6 +353,24 @@ html, body {
     &__header {
         font-size: 1.85em;
         width: 75%;
+    }
+}
+
+@keyframes descwidth {
+    0% {
+        width: 90%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes defaultdescwidth {
+    0% {
+        width: 75%;
+    }
+    100% {
+        width: 90%;
     }
 }
 
@@ -527,10 +459,10 @@ html, body {
 
 @keyframes favorite {
     0% {
-        transform: scaleY(0);
+        transform: scale(0);
     }
     100% {
-        transform: scaleY(1);
+        transform: scale(1);
     }
 }
 
@@ -580,5 +512,14 @@ html, body {
     }
     100% {
         transform: scaleY(1);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

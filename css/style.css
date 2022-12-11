@@ -343,15 +343,14 @@ html, body {
   z-index: 1;
 }
 .rest__heart--empty:hover {
-  opacity: 0;
+  animation: disappear 200ms both;
 }
 .rest__heart--empty:hover + .rest__heart--full {
   animation: favorite 200ms forwards;
 }
 .rest__heart--full {
   z-index: 0;
-  transform: scaleY(0);
-  transform-origin: bottom;
+  transform: scale(0);
 }
 .rest__heart--full::before {
   background-clip: text;
@@ -423,9 +422,11 @@ html, body {
 .menu__card__desc {
   margin: 0;
   font-weight: 300;
-  font-size: 0.85em;
+  font-size: 0.95em;
   text-overflow: ellipsis;
   white-space: nowrap;
+  overflow: hidden;
+  animation: defaultdescwidth 750ms both;
 }
 .menu__card__pricecheck {
   display: flex;
@@ -468,6 +469,9 @@ html, body {
 .menu__card:hover .menu__card__checkmark {
   animation: checkmark 500ms both alternate;
 }
+.menu__card:hover .menu__card__desc {
+  animation: descwidth 750ms both;
+}
 
 .order {
   background-color: #f1f1f1;
@@ -499,6 +503,22 @@ html, body {
   width: 75%;
 }
 
+@keyframes descwidth {
+  0% {
+    width: 90%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+@keyframes defaultdescwidth {
+  0% {
+    width: 75%;
+  }
+  100% {
+    width: 90%;
+  }
+}
 @keyframes btnhover {
   0% {
     opacity: 1;
@@ -577,10 +597,10 @@ html, body {
 }
 @keyframes favorite {
   0% {
-    transform: scaleY(0);
+    transform: scale(0);
   }
   100% {
-    transform: scaleY(1);
+    transform: scale(1);
   }
 }
 @keyframes loaded {
@@ -624,6 +644,14 @@ html, body {
   }
   100% {
     transform: scaleY(1);
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
