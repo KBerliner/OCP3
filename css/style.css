@@ -412,8 +412,7 @@ html, body {
   justify-content: space-around;
   padding: 0 0.5em;
   font-family: "Roboto", sans-serif;
-  height: 65%;
-  width: 100%;
+  width: 78%;
 }
 .menu__card__title {
   margin: 0;
